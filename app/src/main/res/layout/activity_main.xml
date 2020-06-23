@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAE7E7"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10sp"
+            android:layout_below="@id/welcome_text"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="300sp"
+            android:background="@color/colorPrimary"
+            android:text="@string/button_reset_text"
+            android:textAlignment="center"
+            android:textColor="#FFC200"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0sp"
+            android:layout_marginTop="5sp"
+            android:alpha="0.9"
+            android:background="@color/colorPrimary"
+            android:clickable="false"
+            android:duplicateParentState="false"
+            android:editable="false"
+            android:ems="10"
+            android:fadingEdge="horizontal"
+            android:fontFamily="casual"
+            android:freezesText="true"
+            android:gravity="start|center_horizontal|top|center_vertical"
+            android:inputType="none"
+            android:singleLine="false"
+            android:text="@string/welcome"
+            android:textColor="#FFC200"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button_search"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:layout_below="@id/welcome_text"
+            android:background="@color/colorPrimary"
+            android:text="@string/button_search_text"
+            android:textAlignment="center"
+            android:textColor="#FFC200"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/prediction_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_text"
+            android:layout_marginTop="10sp"
+            android:layout_toStartOf="@id/button_reset"
+            android:layout_toEndOf="@id/button_search"
+            android:duplicateParentState="false"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="textPersonName"
+            android:text="@string/prediction_text"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_box"
+            android:layout_width="wrap_content"
+            android:layout_height="400sp"
+            android:layout_below="@id/prediction_text"
+            android:layout_alignStart="@id/prediction_text"
+            android:layout_alignEnd="@id/prediction_text"
+            android:layout_marginTop="30sp" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

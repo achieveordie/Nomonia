@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Nomonia</string>
+    <string name="welcome">
+        This app is in it\'s test phase probably always
+        \nwill be in it\'s test phase. This app is
+        \nsolely designed to show the usage of Machine Learning
+        \nModel in medical field and this app contains
+        \na model that was constructed from the scratch
+        \nand this recognizes presence of Pneunomia
+        \nbased on chest-xrays along with the how likely
+        \nit is in terms of percentage. Though trained
+        \non actual data, this is likely to make mistakes.
+        \nDo not take this as the final verdict and
+        \ngo visit a doc with your x-rays. You\'ve been warned.
+    </string>
+    <string name="button_search_text">Feed Image</string>
+    <string name="button_reset_text">RESET</string>
+    <string name="prediction_text">Prediction</string>
+</resources>
