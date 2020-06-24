@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     Button search_button;
     Button reset_button;
+    TextView prediction_text;
     private static final int PICK_IMAGE = 100;
     Uri imageUri;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView)findViewById(R.id.image_box);
         search_button = (Button)findViewById(R.id.button_search);
         reset_button = (Button)findViewById(R.id.button_reset);
+        prediction_text (TextView)findViewById(R.id.prediction_text);
 
         search_button.setOnClickListener(new View.OnClickListener(){
             @Override
