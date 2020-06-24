@@ -45,26 +45,19 @@ public class Classifier {
     }
 
     public static class Recognition {
-        private String id;
         private Float confidence;
 
         public Recognition(
-                String id, Float confidence
+                 Float confidence
         ){
-            this.id = id;
             this.confidence = confidence;
         }
-
-        public String getId(){return id;}
 
         public Float getConfidence(){return confidence;}
 
         @Override
         public String toString(){
             String resultString = "";
-            if (id != null) {
-                resultString += "[" + id + "]";
-            }
             if (confidence != null){
                 resultString += String.format("(%.3f%%) ", confidence*100.0f);
             }
