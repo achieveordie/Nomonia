@@ -44,26 +44,7 @@ public class Classifier {
         return "model.tflite";
     }
 
-    public static class Recognition {
-        private Float confidence;
 
-        public Recognition(
-                 Float confidence
-        ){
-            this.confidence = confidence;
-        }
-
-        public Float getConfidence(){return confidence;}
-
-        @Override
-        public String toString(){
-            String resultString = "";
-            if (confidence != null){
-                resultString += String.format("(%.3f%%) ", confidence*100.0f);
-            }
-            return resultString;
-        }
-    }
 
     protected Classifier(Activity activity, Device device, int numThreads)
         throws IOException {
@@ -98,11 +79,13 @@ public class Classifier {
 
     }
 
-    public Float recognizeImage(final Bitmap bitmap){
+    public String recognizeImage(final Bitmap bitmap){
         inputImageBuffer = loadImage(bitmap);
         tflite.run(inputImageBuffer.getBuffer(), outputProbabilitybuffer.getBuffer().rewind());
         float[] predictions = outputProbabilitybuffer.getFloatArray();
-        return predictions[1];
+
+        Recognition recognition = new Recognition(predictions[1]);
+        return recognition.toString();
     }
 
     public void close() {
@@ -132,5 +115,28 @@ public class Classifier {
         return imageProcessor.process(inputImageBuffer);
     }
 
+    public static class Recognition {
+        private Float confidence;
+
+        public Recognition(
+                 Float confidence
+        ){
+            this.confidence = confidence;
+        }
+
+        public Float getConfidence(){return confidence;}
+
+        @Override
+        public String toString(){
+            String resultString = "";
+
+            if (confidence != null){
+                resultString += String.format("(%.3f%%) ", confidence*100.0f);
+            }
+            return resultString;
+        }
+    }
 
 }
+
+
