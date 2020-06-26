@@ -39,7 +39,13 @@ public class MainActivity extends AppCompatActivity {
         reset_button = (Button)findViewById(R.id.button_reset);
         prediction_text = (TextView)findViewById(R.id.prediction_text);
 
-        classifier = new Classifier(, Classifier.Device.CPU, -1);
+
+        try {
+            classifier = new Classifier(this, Classifier.Device.CPU, -1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         search_button.setOnClickListener(new View.OnClickListener(){
             @Override
