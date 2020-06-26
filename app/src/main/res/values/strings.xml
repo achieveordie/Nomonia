@@ -12,6 +12,8 @@
         \non actual data, this is likely to make mistakes.
         \nDo not take this as the final verdict and
         \ngo visit a doc with your x-rays. You\'ve been warned.
+        \nAlso, don\'t be surprised if it classifies your
+        \npersonal photo as infected with 100% probability. :)
     </string>
     <string name="button_search_text">Feed Image</string>
     <string name="button_reset_text">RESET</string>
