@@ -105,13 +105,14 @@ public class Classifier {
 
     public int getImageSizeY() {return imageSizeY;}
 
+
     private TensorImage loadImage(Bitmap bitmap){
-        inputImageBuffer.load(bitmap);
+        inputImageBuffer.load(bitmap.copy(Bitmap.Config.ARGB_8888,true));
         int cropSize = 100;
         ImageProcessor imageProcessor =
                 new ImageProcessor.Builder()
-                    .add(new ResizeWithCropOrPadOp(cropSize, cropSize))
-                    .build();
+                        .add(new ResizeWithCropOrPadOp(cropSize, cropSize))
+                        .build();
         return imageProcessor.process(inputImageBuffer);
     }
 
