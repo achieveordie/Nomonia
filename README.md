@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/achieveordie/nomonia/badge)](https://www.codefactor.io/repository/github/achieveordie/nomonia)
+
 # Nomonia
 An Android app that tells if someone has bacterial Pneumonia based on their Chest x-ray. 
 
